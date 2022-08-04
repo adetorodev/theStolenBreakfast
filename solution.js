@@ -13,6 +13,19 @@ function findUniqueDeliveryId(deliveryIds) {
  
    return [...idsToOccurrences.keys()].find(id => idsToOccurrences.get(id) === 1);
  }
+
+//  bitwise operation
+
+ function findUniqueDeliveryId(deliveryIds) {
+
+  var uniqueDeliveryId = 0;
+
+  deliveryIds.forEach(deliveryId => {
+    uniqueDeliveryId ^= deliveryId;
+  });
+
+  return uniqueDeliveryId;
+}
  
  
  
